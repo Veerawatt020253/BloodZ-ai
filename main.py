@@ -60,7 +60,7 @@ def load_model(model_bytes: Optional[bytes]=None, model_path: Optional[str]=None
         return MODEL_CACHE[key]
 
     # Fall back to path
-    path = model_path or os.getenv("MODEL_PATH", "./best.pt")
+    path = model_path or os.getenv("MODEL_PATH", "./model/best.pt")
     if not os.path.exists(path):
         raise FileNotFoundError(
             f"YOLO weights not found. Provide 'model' file in request or set MODEL_PATH env (current: {path})."
